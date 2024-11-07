@@ -22,5 +22,10 @@ namespace ComercioLIB
           this.dni = dNI;
           nroOrden = nroInicio++;
         }
+
+        public override string ToString()
+        {
+            return $"C;{nroInicio};{dni}";
+        }
     }
 }

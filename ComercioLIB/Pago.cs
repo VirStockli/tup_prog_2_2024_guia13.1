@@ -19,5 +19,11 @@ namespace ComercioLIB
         {
             cc.RegistrarPago(valor);
         }
+
+        public override string ToString()
+        {
+            return $"P;{nroInicio};{cc.ToString()}";
+        }
     }
+
 }

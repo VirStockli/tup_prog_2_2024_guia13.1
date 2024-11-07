@@ -42,5 +42,10 @@ namespace ComercioLIB
                 return NroCuenta.CompareTo(other.NroCuenta);
             return 1;
         }
+
+        public override string ToString()
+        {
+            return $"{NroCuenta};{saldo}";
+        }
     }
 }

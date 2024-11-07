@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnAtender = new System.Windows.Forms.Button();
-            this.btnImportar = new System.Windows.Forms.Button();
-            this.btnExportar = new System.Windows.Forms.Button();
             this.btnTicket = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +41,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbDNI = new System.Windows.Forms.TextBox();
             this.lbDNI = new System.Windows.Forms.Label();
+            this.AbrirDoc = new System.Windows.Forms.OpenFileDialog();
+            this.GuardarDoc = new System.Windows.Forms.SaveFileDialog();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.btnImportar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,26 +59,6 @@
             this.btnAtender.Text = "Atender Cliente";
             this.btnAtender.UseVisualStyleBackColor = true;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
-            // 
-            // btnImportar
-            // 
-            this.btnImportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportar.Location = new System.Drawing.Point(342, 244);
-            this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(89, 52);
-            this.btnImportar.TabIndex = 14;
-            this.btnImportar.Text = "Importar Cta Ctes";
-            this.btnImportar.UseVisualStyleBackColor = true;
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportar.Location = new System.Drawing.Point(342, 188);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(89, 50);
-            this.btnExportar.TabIndex = 13;
-            this.btnExportar.Text = "Exportar Tickets";
-            this.btnExportar.UseVisualStyleBackColor = true;
             // 
             // btnTicket
             // 
@@ -197,23 +179,46 @@
             this.lbDNI.TabIndex = 12;
             this.lbDNI.Text = "DNI";
             // 
+            // btnExportar
+            // 
+            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Location = new System.Drawing.Point(342, 188);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(89, 50);
+            this.btnExportar.TabIndex = 18;
+            this.btnExportar.Text = "Exportar Tickets";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            // 
+            // btnImportar
+            // 
+            this.btnImportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.Location = new System.Drawing.Point(342, 244);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(89, 52);
+            this.btnImportar.TabIndex = 19;
+            this.btnImportar.Text = "Importar Cta Ctes";
+            this.btnImportar.UseVisualStyleBackColor = true;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 372);
+            this.Controls.Add(this.btnImportar);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.lbDNI);
             this.Controls.Add(this.txbDNI);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnAtender);
-            this.Controls.Add(this.btnImportar);
-            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.btnTicket);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -226,8 +231,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAtender;
-        private System.Windows.Forms.Button btnImportar;
-        public System.Windows.Forms.Button btnExportar;
         public System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
@@ -240,6 +243,10 @@
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.TextBox txbDNI;
         private System.Windows.Forms.Label lbDNI;
+        private System.Windows.Forms.OpenFileDialog AbrirDoc;
+        private System.Windows.Forms.SaveFileDialog GuardarDoc;
+        public System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.Button btnImportar;
     }
 }
 

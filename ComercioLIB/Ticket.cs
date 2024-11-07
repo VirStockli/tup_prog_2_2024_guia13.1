@@ -22,5 +22,10 @@ namespace ComercioLIB
             return fechaHora;                
         }
 
+        public override string ToString()
+        {
+            return $"{fechaHora.Date}";
+        }
+
     }
 }

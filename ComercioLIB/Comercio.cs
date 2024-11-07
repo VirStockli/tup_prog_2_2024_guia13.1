@@ -45,7 +45,17 @@ namespace ComercioLIB
                 }
             }
         }
+
+        public List<Ticket> VerTickets()
+        {
+            return ListaAtendidos;
+        }
        
+        public void CrearCtaCte(int cta, Cliente nuevo)
+        {
+            cuentasCorrientes.Add(new CuentaCorriente(cta, nuevo));
+        }
+
         public CuentaCorriente PedirCuenta(int nrocuenta)
         {
             cuentasCorrientes.Sort();
